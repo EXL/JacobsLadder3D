@@ -298,9 +298,9 @@ void Drawing::drawSingleCube(GLfloat angleOfRotation, GLfloat xPos, GLfloat yPos
 
 	GLushort movingArray[12] = {
 		start,
-		start + 1, start + 2, start + 3, start + 4, start + 5,
+        GLushort(start + 1), GLushort(start + 2), GLushort(start + 3), GLushort(start + 4), GLushort(start + 5),
 		start += (pBuffers->VERTICES_PER_SLICE),
-		start + 1, start + 2, start + 3, start + 4, start + 5,
+        GLushort(start + 1), GLushort(start + 2), GLushort(start + 3), GLushort(start + 4), GLushort(start + 5),
 	};
 
 
@@ -379,7 +379,7 @@ void Drawing::drawGoalSets(GLfloat angleOfRotation, GoalObject* goal){
 
 	GLushort movingArray[6] = {
 			x_endUpper,
-			x_endUpper + 1, x_endLower + 2, x_endLower + 3, x_startLower + 4, x_startLower + 5,
+            GLushort(x_endUpper + 1), GLushort(x_endLower + 2), GLushort(x_endLower + 3), GLushort(x_startLower + 4), GLushort(x_startLower + 5),
 	};
 
 	x_startLower += (pBuffers->VERTICES_PER_SLICE);
@@ -388,7 +388,7 @@ void Drawing::drawGoalSets(GLfloat angleOfRotation, GoalObject* goal){
 	x_endUpper += (pBuffers->VERTICES_PER_SLICE);
 
 	GLushort movingArray2[4] = {
-			x_endUpper + 2, x_startUpper + 3, x_startLower + 5, x_endLower + 4,
+            GLushort(x_endUpper + 2), GLushort(x_startUpper + 3), GLushort(x_startLower + 5), GLushort(x_endLower + 4),
 	};
 
 

@@ -27,10 +27,9 @@ repositories {
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "24.0.3"
     defaultConfig {
         applicationId "com.mycardboarddreams.jacobsladder"
-        minSdkVersion 17
+        minSdkVersion 16
         targetSdkVersion 24
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         externalNativeBuild {
@@ -45,7 +44,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
+/*
     productFlavors {
         free {
             versionCode 41
@@ -59,7 +58,7 @@ android {
             versionNameSuffix "-deluxe"
         }
     }
-
+*/
     externalNativeBuild {
         cmake {
             path "CMakeLists.txt"
@@ -68,26 +67,26 @@ android {
 }
 
 dependencies {
-    compile 'com.google.android.gms:play-services-analytics:10.0.1'
-    compile 'com.google.firebase:firebase-crash:10.0.1'
+    implementation 'com.google.android.gms:play-services-analytics:10.0.1'
+    implementation 'com.google.firebase:firebase-crash:10.0.1'
 
-    androidTestCompile 'org.assertj:assertj-core:2.5.0'
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+    androidTestImplementation 'org.assertj:assertj-core:2.5.0'
+    androidTestImplementation ('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    androidTestCompile project(':common')
+    androidTestImplementation project(':common')
 
-    compile('com.crashlytics.sdk.android:crashlytics:2.6.6@aar') {
+    implementation('com.crashlytics.sdk.android:crashlytics:2.6.6@aar') {
         transitive = true
     }
-    compile('com.crashlytics.sdk.android:crashlytics-ndk:1.1.6@aar') {
+    implementation('com.crashlytics.sdk.android:crashlytics-ndk:1.1.6@aar') {
         transitive = true;
     }
 
 }
 
 
-apply plugin: 'com.google.gms.google-services'
+//apply plugin: 'com.google.gms.google-services'
 
 /*
  If you add your Fabric/Crashlytics API Key to the manifest, uncomment the lines below
